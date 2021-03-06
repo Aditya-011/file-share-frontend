@@ -1,7 +1,4 @@
 :root {
-  --main-bg-color: #edf5fe;
-  --light-blue: #03a9f4;
-  --border-color: #0288d147;
   --container-width: 500px;
 }
 
@@ -30,7 +27,7 @@ body {
 .drop-zone {
   width: var(--container-width);
   min-height: 200px;
-  border: 2px dashed #000;
+  border: 2px solid #000;
   border-radius: 10px;
   margin: 30px;
   transition: 0.2s all ease-in;
@@ -38,7 +35,6 @@ body {
 
 /* will be added when user drags */
 .drop-zone.dragged {
-  background: var(--main-bg-color);
   border-color: #000;
 }
 
@@ -83,7 +79,7 @@ body {
 }
 
 #browseBtn {
-  color: #2196f3;
+  color: #ff304f;
   cursor: pointer;
 }
 
@@ -134,7 +130,7 @@ body {
 
 /* sharing container style */
 .sharing-container {
-  margin-bottom: 25px;
+  margin-bottom: 1rem;
   width: #000;
   border-radius: 10px;
   display: none;
@@ -154,7 +150,7 @@ body {
   display: flex;
   position: relative;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
 }
 
 .sharing-container .input-container input {
@@ -162,10 +158,10 @@ body {
   border-radius: 3px;
   padding: 10px 15px;
   font-size: 20px;
-  border: 2px dashed #000;
+  border: 2px solid #000;
   border-radius: 6px;
   background: #f5fcff;
-  color: #607d8b;
+  color: #000;
 }
 
 .sharing-container img {
@@ -225,7 +221,7 @@ body {
   background: #000;
   border: none;
   border-radius: 5px;
-  color: #607d8b;
+  color: #fff;
   cursor: pointer;
 }
 
@@ -265,12 +261,33 @@ body {
 
 footer {
   position: absolute;
-  bottom: 5px;
+  right: 0;
+  height: 40px;
+  width: 40px;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: upDown 4s infinite ease;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
 }
-footer h3 {
-  text-align: center;
-}
+
 footer a {
   text-decoration: none;
-  color: #000;
+  color: #fff;
+  background: #000;
+}
+@keyframes upDown {
+  0% {
+    transform: translateY(6px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(6px);
+  }
 }
