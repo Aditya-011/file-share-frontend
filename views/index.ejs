@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>fileShare</title>
+    <title>cloudShare</title>
     <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
@@ -14,75 +14,90 @@
     />
   </head>
   <body>
-    <h1>fileShare</h1>
-    <section class="upload-container">
-      <form action="">
-        <div class="drop-zone">
-          <input type="file" id="fileInput" />
-          <div class="title">
-            Drop your Files here or, <span id="browseBtn">browse</span>
+    <div class="body">
+      <div class="blob1">
+        <img src="images/blob1.svg" alt="" />
+      </div>
+      <div class="blob2"><img src="images/blob2.svg" alt="" /></div>
+      <div class="blob3"><img src="images/blob3.svg" alt="" /></div>
+      <div class="blob4"><img src="images/blob4.svg" alt="" /></div>
+
+      <section class="upload-container">
+        <div class="title">
+          <h2>cloudShare</h2>
+        </div>
+        <div class="bottom">
+          <div class="left">
+            <form action="">
+              <div class="drop-zone">
+                <input type="file" id="fileInput" />
+                <div class="text">
+                  Drop your Files here or, <span id="browseBtn">browse</span>
+                </div>
+              </div>
+            </form>
+            <div class="progress-container">
+              <div class="bg-progress"></div>
+
+              <div class="inner-container">
+                <div class="status">Uploading...</div>
+                <div class="percent-container">
+                  <span class="percentage" id="progressPercent">0</span>%
+                </div>
+                <div class="progress-bar"></div>
+              </div>
+            </div>
+            <div class="sharing-container">
+              <p class="expire">Link expires in 1 hour</p>
+
+              <div class="input-container result">
+                <input type="text" id="fileURL" readonly />
+                <img src="images/copy.svg" id="copyURLBtn" alt="" />
+              </div>
+
+              <p class="email-info">Or Send via Email</p>
+              <div class="email-container">
+                <form id="emailForm">
+                  <div class="filed">
+                    <label for="fromEmail" style="color: #393768"
+                      >Your email</label
+                    >
+                    <input
+                      type="email"
+                      autocomplete="email"
+                      required
+                      name="from-email"
+                      id="fromEmail"
+                    />
+                  </div>
+
+                  <div class="filed">
+                    <label for="toEmail" style="color: #393768"
+                      >Receiver's email</label
+                    >
+                    <input
+                      type="email"
+                      required
+                      autocomplete="receiver"
+                      name="to-email"
+                      id="toEmail"
+                    />
+                  </div>
+                  <div class="send-btn-container">
+                    <button type="submit">Send</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="right">
+            <img src="images/character.svg" alt="" />
           </div>
         </div>
-      </form>
-      <div class="progress-container">
-        <div class="bg-progress"></div>
+      </section>
+    </div>
 
-        <div class="inner-container">
-          <div class="status">Uploading...</div>
-          <div class="percent-container">
-            <span class="percentage" id="progressPercent">0</span>%
-          </div>
-          <div class="progress-bar"></div>
-        </div>
-      </div>
-      <div class="sharing-container">
-        <p class="expire">Link expires in 1 hour</p>
-
-        <div class="input-container">
-          <input type="text" id="fileURL" readonly />
-
-          <i class="fas fa-copy" id="copyURLBtn"></i>
-        </div>
-
-        <p class="email-info">Or Send via Email</p>
-        <div class="email-container">
-          <form id="emailForm">
-            <div class="filed">
-              <label for="fromEmail">Your email</label>
-              <input
-                type="email"
-                autocomplete="email"
-                required
-                name="from-email"
-                id="fromEmail"
-              />
-            </div>
-
-            <div class="filed">
-              <label for="toEmail">Receiver's email</label>
-              <input
-                type="email"
-                required
-                autocomplete="receiver"
-                name="to-email"
-                id="toEmail"
-              />
-            </div>
-            <div class="send-btn-container">
-              <button type="submit">Send</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
     <div class="toast">Sample message</div>
-    <footer>
-      <a
-        href="https://github.com/Aditya-011/file-share-frontend"
-        target="_blank"
-        ><i class="fab fa-github"></i
-      ></a>
-    </footer>
   </body>
   <script src="js/index.js"></script>
 </html>
