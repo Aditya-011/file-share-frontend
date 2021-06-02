@@ -129,6 +129,7 @@ const onFileUploadSuccess = (res) => {
   //console.log(url);
   sharingContainer.style.display = "block";
   fileURL.value = url;
+  document.querySelector(".title").style.display = "none";
 };
 
 emailForm.addEventListener("submit", (e) => {
