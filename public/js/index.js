@@ -19,7 +19,7 @@ const baseURL = "http://localhost:3000";
 const uploadURL = `${baseURL}/api/files`;
 const emailURL = `${baseURL}/api/files/send`;
 
-const maxAllowedSize = 10 * 1024 * 1024; //10mb
+const maxAllowedSize = 100 * 1024 * 1024; //100mb
 
 browseBtn.addEventListener("click", () => {
   fileInput.click();
@@ -34,7 +34,7 @@ dropZone.addEventListener("drop", (e) => {
       fileInput.files = files;
       uploadFile();
     } else {
-      showToast("Max file size is 10 MB");
+      showToast("Max file size is 100MB");
     }
   } else if (files.length > 1) {
     showToast("You can't upload multiple files");
@@ -52,13 +52,13 @@ dropZone.addEventListener("dragover", (e) => {
 dropZone.addEventListener("dragleave", (e) => {
   dropZone.classList.remove("dragged");
 
-  //console.log("drag ended");
+  console.log("drag ended");
 });
 
 // file input change and uploader
 fileInput.addEventListener("change", () => {
   if (fileInput.files[0].size > maxAllowedSize) {
-    showToast("Max file size is 10 MB");
+    showToast("Max file size is 100MB");
     fileInput.value = ""; // reset the input
     return;
   }
@@ -77,7 +77,7 @@ fileURL.addEventListener("click", () => {
 });
 
 const uploadFile = () => {
-  //console.log("file added uploading");
+  console.log("file added uploading");
 
   files = fileInput.files;
   const formData = new FormData();
@@ -126,10 +126,9 @@ const onFileUploadSuccess = (res) => {
   progressContainer.style.display = "none"; // hide the box
 
   const { file: url } = JSON.parse(res);
-  //console.log(url);
+  console.log(url);
   sharingContainer.style.display = "block";
   fileURL.value = url;
-  document.querySelector(".title").style.display = "none";
 };
 
 emailForm.addEventListener("submit", (e) => {
@@ -146,7 +145,7 @@ emailForm.addEventListener("submit", (e) => {
     emailTo: emailForm.elements["to-email"].value,
     emailFrom: emailForm.elements["from-email"].value,
   };
-  //console.log(formData);
+  console.log(formData);
   fetch(emailURL, {
     method: "POST",
     headers: {
@@ -167,7 +166,6 @@ let toastTimer;
 // the toast function
 const showToast = (msg) => {
   clearTimeout(toastTimer);
-  //console.log(msg);
   toast.innerText = msg;
   toast.classList.add("show");
   toastTimer = setTimeout(() => {

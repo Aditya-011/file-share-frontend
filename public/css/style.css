@@ -330,6 +330,9 @@ body {
   .filed {
     margin: 8px;
   }
+  .filed input {
+    width: 20vw;
+  }
 }
 @media only screen and (max-width: 400px) {
   .email-container label {
