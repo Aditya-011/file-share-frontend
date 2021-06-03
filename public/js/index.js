@@ -1,13 +1,9 @@
 const dropZone = document.querySelector(".drop-zone");
 const fileInput = document.querySelector("#fileInput");
 const browseBtn = document.querySelector("#browseBtn");
-
-const bgProgress = document.querySelector(".bg-progress");
-const progressPercent = document.querySelector("#progressPercent");
-const progressContainer = document.querySelector(".progress-container");
-const progressBar = document.querySelector(".progress-bar");
-const status = document.querySelector(".status");
-
+const pr = document.querySelector(".pr");
+const bar = document.querySelector(".circle");
+const percent = document.querySelector(".percent");
 const sharingContainer = document.querySelector(".sharing-container");
 const copyURLBtn = document.querySelector("#copyURLBtn");
 const fileURL = document.querySelector("#fileURL");
@@ -15,11 +11,11 @@ const emailForm = document.querySelector("#emailForm");
 
 const toast = document.querySelector(".toast");
 
-const baseURL = "http://localhost:3000";
+const baseURL = "https://cloud-share-app.herokuapp.com";
 const uploadURL = `${baseURL}/api/files`;
 const emailURL = `${baseURL}/api/files/send`;
 
-const maxAllowedSize = 100 * 1024 * 1024; //100mb
+const maxAllowedSize = 50 * 1024 * 1024; //500mb
 
 browseBtn.addEventListener("click", () => {
   fileInput.click();
@@ -34,7 +30,7 @@ dropZone.addEventListener("drop", (e) => {
       fileInput.files = files;
       uploadFile();
     } else {
-      showToast("Max file size is 100MB");
+      showToast("Max file size is 50MB");
     }
   } else if (files.length > 1) {
     showToast("You can't upload multiple files");
@@ -58,7 +54,7 @@ dropZone.addEventListener("dragleave", (e) => {
 // file input change and uploader
 fileInput.addEventListener("change", () => {
   if (fileInput.files[0].size > maxAllowedSize) {
-    showToast("Max file size is 100MB");
+    showToast("Max file size is 10MB");
     fileInput.value = ""; // reset the input
     return;
   }
@@ -84,7 +80,7 @@ const uploadFile = () => {
   formData.append("myfile", files[0]);
 
   //show the uploader
-  progressContainer.style.display = "block";
+  pr.style.display = "block";
 
   // upload file
   const xhr = new XMLHttpRequest();
@@ -93,10 +89,10 @@ const uploadFile = () => {
   xhr.upload.onprogress = function (event) {
     // find the percentage of uploaded
     let percent = Math.round((100 * event.loaded) / event.total);
-    progressPercent.innerText = percent;
-    const scaleX = `scaleX(${percent / 100})`;
-    bgProgress.style.transform = scaleX;
-    progressBar.style.transform = scaleX;
+    //percent.value = `${percent}%`;
+    const scaleX = `${percent * 0.35}vw`;
+    bar.style.width = scaleX;
+    //percent.style.transform = scaleX;
   };
 
   // handle error
@@ -118,12 +114,12 @@ const uploadFile = () => {
 
 const onFileUploadSuccess = (res) => {
   fileInput.value = ""; // reset the input
-  status.innerText = "Uploaded";
+  //status.innerText = "Uploaded";
 
   // remove the disabled attribute from form btn & make text send
   emailForm[2].removeAttribute("disabled");
   emailForm[2].innerText = "Send";
-  progressContainer.style.display = "none"; // hide the box
+  pr.style.display = "none"; // hide the box
 
   const { file: url } = JSON.parse(res);
   //console.log(url);
