@@ -52,7 +52,7 @@ dropZone.addEventListener("dragover", (e) => {
 dropZone.addEventListener("dragleave", (e) => {
   dropZone.classList.remove("dragged");
 
-  console.log("drag ended");
+  //console.log("drag ended");
 });
 
 // file input change and uploader
@@ -77,7 +77,7 @@ fileURL.addEventListener("click", () => {
 });
 
 const uploadFile = () => {
-  console.log("file added uploading");
+  //console.log("file added uploading");
 
   files = fileInput.files;
   const formData = new FormData();
@@ -126,7 +126,7 @@ const onFileUploadSuccess = (res) => {
   progressContainer.style.display = "none"; // hide the box
 
   const { file: url } = JSON.parse(res);
-  console.log(url);
+  //console.log(url);
   sharingContainer.style.display = "block";
   fileURL.value = url;
 };
@@ -145,7 +145,7 @@ emailForm.addEventListener("submit", (e) => {
     emailTo: emailForm.elements["to-email"].value,
     emailFrom: emailForm.elements["from-email"].value,
   };
-  console.log(formData);
+  //console.log(formData);
   fetch(emailURL, {
     method: "POST",
     headers: {
