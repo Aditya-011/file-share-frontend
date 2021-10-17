@@ -13,7 +13,7 @@ NPM packages used
 
 ```
 
-For Live demo, [click here:](https://recipie-search-app.netlify.app/)
+For Live demo, [click here:](https://cloud-share-app.herokuapp.com/)
 
 ## Screenshots
 
