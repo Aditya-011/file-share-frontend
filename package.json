@@ -6,7 +6,8 @@
   "author": "Aditya-011 <adihgr18@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon server"
+     "start": "node server",
+     "dev": "nodemon server"
   },
   "dependencies": {
     "dotenv": "^10.0.0",
