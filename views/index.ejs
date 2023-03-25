@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,60 +9,55 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+</head>
+
+<body>
     <div class="body">
-      <div class="blob1">
-        <img src="images/blob1.svg" alt="" />
-      </div>
-      <div class="blob2"><img src="images/blob2.svg" alt="" /></div>
-      <div class="blob3"><img src="images/blob3.svg" alt="" /></div>
-      <div class="blob4"><img src="images/blob4.svg" alt="" /></div>
-
-      <section class="upload-container">
-        <div class="title">
-          <h2>cloudShare</h2>
+        <div class="blob1">
+            <img src="images/blob1.svg" alt="" />
         </div>
-        <div class="bottom">
-          <div class="left">
-            <form action="">
-              <div class="drop-zone">
-                <input type="file" id="fileInput" />
-                <div class="text">
-                  Drop your Files here or,
-                  <span id="browseBtn" style="font-weight: 600">browse</span>
-                </div>
-              </div>
-            </form>
-            <div class="pr">
-              <div class="circle"></div>
-              <p>Uploading</p>
+        <div class="blob2"><img src="images/blob2.svg" alt="" /></div>
+        <div class="blob3"><img src="images/blob3.svg" alt="" /></div>
+        <div class="blob4"><img src="images/blob4.svg" alt="" /></div>
+
+        <section class="upload-container">
+            <div class="title">
+                <h2>cloudShare</h2>
             </div>
+            <div class="bottom">
+                <div class="left">
+                    <form action="">
+                        <div class="drop-zone">
+                            <input type="file" id="fileInput" />
+                            <div class="text" style="font-size: 1.2rem">
+                                Drop your Files here or,
+                                <span id="browseBtn" style="font-weight: 600">browse</span>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="pr">
+                        <div class="circle"></div>
+                        <p>Uploading</p>
+                    </div>
 
-            <div class="sharing-container">
-              <p class="expire" style="font-size: 0.9rem">
-                Link expires in 1 hour
-              </p>
+                    <div class="sharing-container">
+                        <p class="expire" style="font-size: 0.9rem">
+                            Link expires in 1 hour
+                        </p>
 
-              <div class="input-container result">
-                <input type="text" id="fileURL" readonly />
-                <img src="images/copy.svg" id="copyURLBtn" alt="" />
-              </div>
+                        <div class="input-container result">
+                            <input type="text" id="fileURL" readonly />
+                            <img src="images/copy.svg" id="copyURLBtn" alt="" />
+                        </div>
 
-              <p class="email-info" style="font-size: 0.9rem">
-                Or Send via Email
-              </p>
-              <div class="email-container">
-                <form id="emailForm">
-                  <div class="filed">
-                    <label for="fromEmail" class="label" style="color: #393768"
-                      >Your email</label
+                        <p class="email-info" style="font-size: 0.9rem">
+                            Or Send via Email
+                        </p>
+                        <div class="email-container">
+                            <form id="emailForm">
+                                <div class="filed">
+                                    <label for="fromEmail" class="label" style="color: #393768">Your email</label
                     >
                     <input
                       type="email"
